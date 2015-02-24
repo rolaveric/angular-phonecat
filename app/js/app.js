@@ -1,26 +1,31 @@
 'use strict';
+import 'angular';
+import 'angular-route';
+import './animations';
+import './controllers';
+import './directives';
+import './filters';
+import './services';
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+export default angular.module('phonecatApp', [
   'ngRoute',
   'phonecatAnimations',
-
+  'phonecatDirectives',
   'phonecatControllers',
   'phonecatFilters',
   'phonecatServices'
-]);
-
-phonecatApp.config(['$routeProvider',
+]).config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+        controller: 'PhoneListCtrl as listCtrl'
       }).
       when('/phones/:phoneId', {
         templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+        controller: 'PhoneDetailCtrl as detailCtrl'
       }).
       otherwise({
         redirectTo: '/phones'

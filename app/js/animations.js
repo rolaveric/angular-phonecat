@@ -1,6 +1,9 @@
-var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+'use strict';
+import 'jquery';
+import 'angular';
+import 'angular-animate';
 
-phonecatAnimations.animation('.phone', function() {
+export default angular.module('phonecatAnimations', ['ngAnimate']).animation('.phone', function() {
 
   var animateUp = function(element, className, done) {
     if(className != 'active') {
@@ -17,12 +20,12 @@ phonecatAnimations.animation('.phone', function() {
       top: 0
     }, done);
 
-    return function(cancel) {
+    return (cancel) => {
       if(cancel) {
         element.stop();
       }
     };
-  }
+  };
 
   var animateDown = function(element, className, done) {
     if(className != 'active') {
@@ -38,12 +41,12 @@ phonecatAnimations.animation('.phone', function() {
       top: -500
     }, done);
 
-    return function(cancel) {
+    return (cancel) => {
       if(cancel) {
         element.stop();
       }
     };
-  }
+  };
 
   return {
     addClass: animateUp,

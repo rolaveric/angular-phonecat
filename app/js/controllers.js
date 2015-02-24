@@ -1,22 +1,30 @@
 'use strict';
+import 'angular';
+import './services';
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+class PhoneListCtrl {
+  constructor(Phone) {
+    this.phones = Phone.query();
+    this.orderProp = 'age';
+  }
+}
+PhoneListCtrl.$inject = ['Phone'];
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
-    $scope.orderProp = 'age';
-  }]);
-
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+class PhoneDetailCtrl {
+  constructor($routeParams, Phone) {
+    this.phone = Phone.get({phoneId: $routeParams.phoneId}, (phone) => {
+      this.mainImageUrl = phone.images[0];
     });
+  }
 
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
-  }]);
+  setImage(imageUrl) {
+    this.mainImageUrl = imageUrl;
+  }
+}
+PhoneDetailCtrl.$inject = ['$routeParams', 'Phone'];
+
+export default angular.module('phonecatControllers', []).
+  controller('PhoneListCtrl', PhoneListCtrl).
+  controller('PhoneDetailCtrl', PhoneDetailCtrl);

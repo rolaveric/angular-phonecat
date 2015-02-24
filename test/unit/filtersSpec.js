@@ -1,10 +1,12 @@
 'use strict';
+import '../../app/js/app';
+import 'angular-mocks';
 
 /* jasmine specs for filters go here */
 
 describe('filter', function() {
 
-  beforeEach(module('phonecatFilters'));
+  beforeEach(angular.mock.module('phonecatFilters'));
 
 
   describe('checkmark', function() {
