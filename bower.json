@@ -12,10 +12,6 @@
     "bootstrap": "~3.1.1",
     "angular-route": "1.3.x",
     "angular-resource": "1.3.x",
-    "angular-animate": "1.3.x",
-    "system.js": "~0.14.1",
-    "traceur": "~0.0.85",
-    "es6-module-loader": "~0.14.0",
-    "traceur-runtime": "~0.0.85"
+    "angular-animate": "1.3.x"
   }
 }

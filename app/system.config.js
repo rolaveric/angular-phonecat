@@ -9,6 +9,8 @@ System.config({
 		'angular-animate': 'app/bower_components/angular-animate/angular-animate.js',
 		'angular-route': 'app/bower_components/angular-route/angular-route.js',
 		'angular-resource': 'app/bower_components/angular-resource/angular-resource.js'
-	}
+	},
+
+  transpiler: 'babel'
 });
 
