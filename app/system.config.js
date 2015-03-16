@@ -10,11 +10,13 @@ System.config({
 		'angular-route': 'app/bower_components/angular-route/angular-route.js',
 		'angular-resource': 'app/bower_components/angular-resource/angular-resource.js',
     'text': 'app/lib/text.js'
-	},
+  },
 
   meta: {
     'jquery': {format: 'global', exports: 'jQuery'},
     'angular': {format: 'global', exports: 'angular', deps: ['jquery']}
-  }
+  },
+
+  transpiler: 'babel'
 });
 
