@@ -1,11 +1,13 @@
 'use strict';
-import 'angular';
+import angular from 'angular';
 import 'angular-route';
 import './animations';
 import './controllers';
 import './directives';
 import './filters';
 import './services';
+import phoneListTpl from '../partials/phone-list.html!text';
+import phoneDetailTpl from '../partials/phone-detail.html!text';
 
 /* App Module */
 
@@ -20,12 +22,14 @@ export default angular.module('phonecatApp', [
   function($routeProvider) {
     $routeProvider.
       when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl as listCtrl'
+        template: phoneListTpl,
+        controller: 'PhoneListCtrl',
+        controllerAs: 'listCtrl'
       }).
       when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl as detailCtrl'
+        template: phoneDetailTpl,
+        controller: 'PhoneDetailCtrl',
+        controllerAs: 'detailCtrl'
       }).
       otherwise({
         redirectTo: '/phones'

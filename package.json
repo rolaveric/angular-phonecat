@@ -12,7 +12,7 @@
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",
     "karma-jasmine": "^0.1.5",
-    "karma-systemjs": "^0.1.2",
+    "karma-systemjs": "^0.2.0",
     "protractor": "~1.0.0",
     "shelljs": "^0.2.6",
     "systemjs": "^0.11.3",

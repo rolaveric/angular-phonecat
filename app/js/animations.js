@@ -1,6 +1,6 @@
 'use strict';
-import 'jquery';
-import 'angular';
+import jQuery from 'jquery';
+import angular from 'angular';
 import 'angular-animate';
 
 export default angular.module('phonecatAnimations', ['ngAnimate']).animation('.phone', function() {

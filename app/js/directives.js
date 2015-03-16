@@ -1,5 +1,5 @@
 'use strict';
-import 'angular';
+import angular from 'angular';
 
 /* Directives */
 
