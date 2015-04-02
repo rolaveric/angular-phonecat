@@ -3,36 +3,27 @@ module.exports = function(config){
 
     basePath : '../',
 
-    files : [],
+    files : [
+      'test/unit/**/*.js'
+    ],
 
     systemjs: {
-      files: [
-        'app/bower_components/jquery/dist/jquery.js',
-        'app/bower_components/angular/angular.js',
-        'app/bower_components/angular-route/angular-route.js',
-        'app/bower_components/angular-resource/angular-resource.js',
-        'app/bower_components/angular-animate/angular-animate.js',
-        'app/bower_components/angular-mocks/angular-mocks.js',
-        'app/lib/*.js',
-        'app/js/**/*.js',
-        'app/partials/**/*.html',
-        'test/unit/**/*.js'
-      ],
-
       configFile: 'app/system.config.js',
 
       config: {
         paths: {
           'angular-mocks': 'app/bower_components/angular-mocks/angular-mocks.js'
         }
-      },
+      }
+    },
 
-      testFileSuffix: 'Spec.js'
+    preprocessors: {
+      'test/unit/**/*.js': ['systemjs']
     },
 
     autoWatch : true,
 
-    frameworks: ['systemjs', 'jasmine'],
+    frameworks: ['jasmine', 'systemjs'],
 
     browsers : ['Chrome'],
 
@@ -46,7 +37,8 @@ module.exports = function(config){
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
-    }
+    },
 
+    logLevel: config.LOG_INFO
   });
 };
