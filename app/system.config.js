@@ -9,7 +9,8 @@ System.config({
 		'angular-animate': 'app/bower_components/angular-animate/angular-animate.js',
 		'angular-route': 'app/bower_components/angular-route/angular-route.js',
 		'angular-resource': 'app/bower_components/angular-resource/angular-resource.js',
-    'text': 'app/lib/text.js'
+    'text': 'app/lib/text.js',
+    'babel': 'node_modules/babel/node_modules/babel-core/browser.js'
   },
 
   meta: {
